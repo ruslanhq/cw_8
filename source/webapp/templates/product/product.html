@@ -10,6 +10,7 @@
 {% block content %}
     <h1>{{ product.name }}</h1>
     <a href="{% url 'webapp:prod_update' product.pk %}">Edit</a>
+    <a href="{% url 'webapp:prod_delete' product.pk %}">Delete</a>
     {% if product.picture %}
         <img src="{{ product.picture.url }}" alt="prod_pic" class="avatar">
     {% else %}
