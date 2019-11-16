@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from webapp.forms import ProductForm
+from webapp.forms import ProductForm, ProductReviewForm
 from webapp.models import Product
 
 
@@ -17,6 +17,13 @@ class ProductView(DetailView):
     model = Product
     template_name = 'product/product.html'
     context_object_name = 'product'
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     product = self.object
+    #     context['form'] = ProductReviewForm()
+    #     reviews = product.products
+    #     return context
 
 
 class ProductCreate(CreateView):

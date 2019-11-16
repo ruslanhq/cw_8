@@ -17,5 +17,18 @@
         <img src="{% static 'img/images.png' %}" alt="prod_pic" class="avatar">
     {% endif %}
     <p>Description:  <b>{{ product.description }}</b> </p>
+    <div>
+        <h3>Reviews:</h3>
+            {% for prod in product.products.all %}
+                    <p> {{ prod.text }}</p>
+                    <p> Author: {{ prod.author }}</p>
+                    <p> Email: {{ prod.users.email }}</p>
+                    <p>Rating: {{ prod.rating}}</p>
+                    <hr>
+            {% empty %}
+                <p>No reviews yet.</p>
+            {% endfor %}
+    </div>
+
 {% endblock %}
 
