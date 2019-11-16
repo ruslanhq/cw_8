@@ -65,7 +65,8 @@ class ReviewCreate(CreateView):
         return HttpResponseRedirect(self.get_success_url())
 
     def get_success_url(self):
-        return reverse_lazy('webapp:index')
+        # return reverse_lazy('webapp:index')
+        return reverse('webapp:product', kwargs={'pk': self.object.product.pk})
 
 
 class ReviewEdit(UpdateView):
@@ -73,6 +74,16 @@ class ReviewEdit(UpdateView):
     template_name = 'review/update.html'
     form_class = ProductReviewForm
     context_object_name = 'review'
+
+    def get_success_url(self):
+        return reverse('webapp:product', kwargs={'pk': self.object.product.pk})
+
+
+class ReviewDelete(DeleteView):
+    model = Review
+
+    def get(self, request, *args, **kwargs):
+        return self.delete(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse('webapp:product', kwargs={'pk': self.object.product.pk})

@@ -26,7 +26,7 @@
                     <p> Email: {{ prod.users.email }}</p>
                     <p>Rating: {{ prod.rating}}</p>
                     <p><a href="{% url 'webapp:review_update' prod.pk %}">Edit</a></p>
-                    <p><a href="">Delete</a></p>
+                    <p><a href="{% url 'webapp:review_delete' prod.pk %}">Delete</a></p>
                     <hr>
             {% empty %}
                 <p>No reviews yet.</p>
