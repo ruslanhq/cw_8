@@ -1,0 +1,100 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "Iphone",
+    "category": "Phones",
+    "description": "Good",
+    "picture": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "GT",
+    "category": "Bike",
+    "description": "speed",
+    "picture": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "mac",
+    "category": "Notebook",
+    "description": "cool",
+    "picture": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "sony",
+    "category": "Phones",
+    "description": "beautiful",
+    "picture": ""
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$NGO8H6RWQZyV$hG+jTWXE57ph23mlXficjaubx7dBtuLTa0y8luec3EY=",
+    "last_login": "2019-11-16T07:08:52.180Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-11-16T05:16:23.601Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "product": 1,
+    "text": "good phone",
+    "rating": "5"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "product": 2,
+    "text": "best bike",
+    "rating": "4"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "product": 3,
+    "text": "expensive",
+    "rating": "3"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 4,
+  "fields": {
+    "author": 1,
+    "product": 4,
+    "text": "test",
+    "rating": "1"
+  }
+}
+]

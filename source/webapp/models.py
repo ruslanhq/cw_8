@@ -29,7 +29,7 @@ class Review(models.Model):
     author = models.ForeignKey(User, related_name='users', on_delete=models.CASCADE, verbose_name='Автор')
     product = models.ForeignKey('webapp.Product', related_name='products', on_delete=models.CASCADE, verbose_name='Товар')
     text = models.TextField(max_length=500, verbose_name='Текст отзыва')
-    rating = models.IntegerField(choices=RATING_CHOICE, verbose_name='Оценка')
+    rating = models.CharField(max_length=1, choices=RATING_CHOICE, verbose_name='Оценка')
 
     def __str__(self):
         return '{} -- {}'.format(self.author, self.product)
