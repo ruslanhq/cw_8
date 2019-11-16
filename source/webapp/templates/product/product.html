@@ -22,8 +22,8 @@
         <a href="{% url 'webapp:review_create' product.pk %}">Create Review</a>
             {% for prod in product.products.all %}
                     <p> {{ prod.text }}</p>
-                    <p> Author: {{ prod.author }}</p>
-                    <p> Email: {{ prod.users.email }}</p>
+                    <p> Author: <a href="{% url 'accounts:user_detail' prod.author.pk %}">{{ prod.author }}</a></p>
+                    <p> Email: {{ prod.author.email }}</p>
                     <p>Rating: {{ prod.rating}}</p>
                     <p><a href="{% url 'webapp:review_update' prod.pk %}">Edit</a></p>
                     <p><a href="{% url 'webapp:review_delete' prod.pk %}">Delete</a></p>
