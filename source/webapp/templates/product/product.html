@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Product{% endblock %}
+{% block menu %}
+{#        <li><a href="{% url 'task_update' tasks.pk %}">Edit</a></li>#}
+{#        <li><a href="{% url 'task_delete' tasks.pk %}">Delete</a></li>#}
+
+{% endblock %}
+{% block content %}
+    <h1>{{ product.name }}</h1>
+    {% if product.picture %}
+        <img src="{{ product.picture.url }}" alt="prod_pic" class="avatar">
+    {% else %}
+        <img src="{% static 'img/images.png' %}" alt="prod_pic" class="avatar">
+    {% endif %}
+    <p>Description:  <b>{{ product.description }}</b> </p>
+{% endblock %}
+
