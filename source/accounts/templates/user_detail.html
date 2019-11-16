@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ user_obj.username }}{% endblock %}
+{% block menu %}
+    {% if user_obj == request.user %}
+        <li><a href="{% url 'accounts:user_edit' user_obj.pk %}">Edit</a></li>
+        <li><a href="{% url 'accounts:user_edit_pass' user_obj.pk %}">Change Password</a></li>
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <h1>Profile: {{ user_obj.username }} </h1>
+    {% if user_obj.profile.avatar %}
+        <img src="{{ user_obj.profile.avatar.url }}" alt="user_pic" class="avatar">
+    {% else %}
+        <img src="{% static 'img/images.png' %}" alt="user_pic" class="avatar">
+    {% endif %}
+    <p>login: {{ user_obj.username }}</p>
+    <p>Name: {{ user_obj.first_name }}</p>
+    <p>Email: {{ user_obj.email }}</p>
+
+
+{% endblock %}
